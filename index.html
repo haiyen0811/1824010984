@@ -1,24 +1,66 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My first Website</title>
+    <title>My first web</title>
+    <link rel="StyleSheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
-<body>
-    <header>
-        <h1>My site</h1>
-        <div>My slogan</div>
-        <nav></nav>
-    </header>
-    <main>
-        <section>
-            <div>Thêm một dòng mô tả</div>
-            <div>Thêm dòng mô tả</div>
-        </section>
-    </main>
-    <footer>
 
-    </footer>
+<body>
+    <img src="https://kenhthoitiet.vn/wp-content/uploads/2019/01/hoa-7.jpg" alt="hoa dep" width="1535" height="200">
+    <header>
+        <h1 class="monospace">ANH ĐÀO - 樱 花</h1>
+        <h3 class="monospace">Tuổi thanh xuân giống như một cơn mưa rào, dù cho bạn từng bị cảm lạnh
+            <br>vì tắm mưa, bạn vẫn muốn được đắm mình trong cơn mưa ấy lần nữa....</h3>
+    </header>
+    <nav>
+        <ul>
+            <li><a data-section="hoangtube">HOÀNG TỬ BÉ</a></li>
+            <li><a data-section="vode">VÔ ĐỀ</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">TẢN MẠN</a>
+                <div class="dropdown-content">
+                    <a data-section="ngangqua">Ngang qua thế giới của em</a>
+                    <a data-section="kieuhanh">Kiêu hãnh và định kiến</a>
+                </div>
+            </li>
+            <li style="float:right"><a data-section="about">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <section id="hoangtube" class="hideable-section">
+        <div>Home content</div>
+    </section>
+
+    <section id="vode" class="hideable-section">
+        <div>Services content</div>
+    </section>
+
+    <section id="about" class="hideable-section">
+        <div>About content</div>
+    </section>
+
+    <section id="ngangqua" class="hideable-section">
+        <div>Link1 content</div>
+    </section>
+
+    <section id="kieuhanh" class="hideable-section">
+        <div>Link2 content</div>
+    </section>
+
+    <script>
+        $(function() {
+            $('nav ul li a').click(function() {
+                var $section = $('#' + $(this).data('section'));
+                if (!$section.is(':visible')) {
+                    $('.hideable-section').hide();
+                    $section.fadeIn();
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
