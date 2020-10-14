@@ -25,6 +25,13 @@ div.ex1 {
     background-color: rgba(200, 218, 224, 0.774);
   }
 
+  div.ex2 {
+    margin: 25px 50px 75px 100px;
+    width: 1200px;
+    padding: 25px;
+    background-color: rgba(200, 218, 224, 0.452);
+  }
+
   
   input[type=text], textarea {
     width: 100%;
